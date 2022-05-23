@@ -1,13 +1,15 @@
-@import "_source_code/scss/variables";
-@import "_source_code/scss/fonts";
+@import "../variables";
+@import "../fonts";
 
+// 1399 - 1200
 @media screen and (max-width: 1399px) {
 
   main .main__container .right-bar .right-bar__top .middle-content .middle_title {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 
+// 1199 - 1024
 @media screen and (max-width: 1199px) {
   header {
     .menu {
@@ -88,9 +90,43 @@
   }
 }
 
-@media screen and (max-width: 1023px) {
+// 1199 - 1024
+@media screen and (max-width: 1199px) {
 
 }
 
+
+
+@media screen and (max-width: 1023px) {
+  header {
+    .header__container {
+      .logo {
+        svg {
+          width: 112px;
+          height: 35px;
+        }
+      }
+    }
+    .menu {
+      .item {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+// 1023 - 768
 @media screen and (max-width: 767px) {
+}
+
+// 767 - 425
+@media screen and (max-width: 424px) {
+}
+
+// 424 - 375
+@media screen and (max-width: 374px) {
+}
+
+// 374 - 320
+@media screen and (max-width: 374px) {
 }
