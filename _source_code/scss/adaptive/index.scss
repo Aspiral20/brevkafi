@@ -1,5 +1,6 @@
 @import "../variables";
 @import "../fonts";
+@import "../functions";
 
 // 1399 - 1200
 @media screen and (max-width: 1399px) {
@@ -8,7 +9,6 @@
     font-size: 30px;
   }
 }
-
 // 1199 - 1024
 @media screen and (max-width: 1199px) {
   header {
@@ -73,60 +73,218 @@
             max-width: 85px;
           }
           .card-content {
-            .date {
-              font-size: 13px;
-            }
-            .text {
-              font-size: 13px;
-            }
+            font-size: 12px;
+          }
+          &:last-child {
+            display: none;
           }
         }
       }
     }
   }
-  footer.footer {
+  footer {
     padding-left: 80px;
     text-align: left;
   }
 }
-
-// 1199 - 1024
-@media screen and (max-width: 1199px) {
-
-}
-
-
-
+// 1023 - 768
 @media screen and (max-width: 1023px) {
   header {
     .header__container {
       .logo {
-        svg {
+        .brevkafi {
           width: 112px;
           height: 35px;
         }
       }
     }
     .menu {
+      width: 440px;
       .item {
         font-size: 12px;
+      }
+    }
+    .menu_control {
+      width: 80px;
+      .lang {
+        font-size: 12px;
+        width: 25px;
+        svg {
+          width: 6px;
+          height: 5px;
+        }
+      }
+      .search {
+        svg {
+          @include width-height(12px);
+        }
+      }
+      .cart {
+        svg {
+          width: 14px;
+          height: 15px;
+        }
       }
     }
   }
 }
 
-// 1023 - 768
-@media screen and (max-width: 767px) {
-}
-
 // 767 - 425
-@media screen and (max-width: 424px) {
+@media screen and (max-width: 767px) {
+  header {
+    .menu {
+      display: none;
+    }
+    .menu_control {
+      width: 255px;
+      .search {
+        .input-active-adaptive {
+          display: block;
+          border-top-left-radius: 15px;
+          border-bottom-left-radius: 15px;
+          width: 141px; //174-33
+          background: $background_adaptive_search;
+          padding: 9px 0 9px 15px;
+          border: 0;
+
+          font-size: 10px;
+          color: $gray;
+          &::placeholder {
+            font-size: 10px;
+            color: $gray;
+          }
+        }
+        .button-active-adaptive {
+          background: $background_adaptive_search;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+          padding: 11px;
+        }
+        svg {
+          @include width-height(11px);
+        }
+      }
+      .lang {
+        display: none;
+      }
+      .cart {
+        svg {
+          width: 18px;
+          height: 20px;
+        }
+      }
+      .burger {
+        @include flex-align-center;
+      }
+    }
+  }
+  main {
+    .main__container {
+      .left_bar {
+        display: none;
+      }
+      .right-bar {
+        padding: 0;
+        .right-bar__top {
+          .right-carousel {
+            width: 100%;
+            height: 231px;
+            .slick-dots li {
+              margin: 0;
+              button:before {
+                font-size: 5px;
+              }
+            }
+            img {
+              height: 231px;
+            }
+          }
+          .middle-content {
+            .middle_title {
+              font-size: 18px;
+              max-width: 263px;
+              @include margin-LeftRight-auto;
+            }
+            .middle_text {
+              font-size: 14px;
+              max-width: 90%;
+              @include margin-LeftRight-auto;
+            }
+            .middle_btn_collections {
+              width: 200px;
+              font-size: 12px;
+              svg {
+                display: none;
+              }
+            }
+          }
+        }
+        .last_news {
+          .title {
+            text-align: center;
+            margin-bottom: 23px;
+          }
+          .cards-container {
+            flex-direction: column;
+            .card-item {
+              flex-direction: column;
+              @include margin-LeftRight-auto;
+              &:last-child {
+                display: flex;
+              }
+              .card-img {
+                width: 100%;
+                max-width: 100%;
+                margin: 25px 0;
+                img {
+                  width: 100%;
+                }
+              }
+              .card-content {
+                max-width: 100%;
+                margin-left: 0;
+                flex-direction: row;
+                font-size: 14px;
+                .date {
+                  margin-right: 40px;
+                }
+                .text {
+                  padding: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  footer {
+    padding-left: 0;
+    text-align: center;
+  }
 }
 
 // 424 - 375
-@media screen and (max-width: 374px) {
+@media screen and (max-width: 424px) {
+  header {
+    .header__container {
+      .logo {
+        .brevkafi {
+          display: none;
+        }
+        .brevkafi-adaptive {
+          display: block;
+        }
+      }
+    }
+    .menu_control {
+      width: 245px;
+    }
+  }
+
 }
 
 // 374 - 320
 @media screen and (max-width: 374px) {
+
 }

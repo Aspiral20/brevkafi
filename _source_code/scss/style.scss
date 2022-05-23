@@ -7,16 +7,18 @@
   margin: 0;
   box-sizing: border-box;
 }
-a,button {
+
+a,button,input,img {
   text-decoration: none;
   outline: none;
 }
+
 body {
   background-color: $darkBlue;
 }
 
-
 .button {
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -52,6 +54,11 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    .logo {
+      .brevkafi-adaptive {
+        display: none;
+      }
+    }
   }
   .menu {
     width: 756px;
@@ -69,30 +76,40 @@ header {
     }
   }
   .menu_control {
-    display: flex;
-    justify-content: space-between;
+    @include flex-justify-spacebetween;
     width: 136px;
     .search {
+      @include flex-align-center;
       cursor: pointer;
+      .input-active-adaptive {
+        display: none;
+      }
+      .button-active-adaptive {
+        background-color: transparent;
+        border: 0;
+      }
     }
     .lang {
+      @include flex-justify-spacebetween;
       cursor: pointer;
       width: 40px;
-      display: flex;
       font-size: 16px;
       top: 15px;
-      justify-content: space-between;
       align-items: center;
       font-family: "Roboto-Regular", sans-serif;
       color: $orange;
       svg {
         align-self: end;
-        bottom: 6px;
+        top: -5px;
         position: relative;
       }
     }
     .cart {
+      @include flex-align-center;
       cursor: pointer;
+    }
+    .burger {
+      display: none;
     }
   }
 }
@@ -218,9 +235,9 @@ main {
               display: flex;
               flex-direction: column;
               margin-left: 20px;
+              font-size: 14px;
               .date {
                 font-family: "Roboto-Regular", sans-serif;
-                font-size: 14px;
                 letter-spacing: -0.02em;
                 text-transform: capitalize;
                 color: $white;
@@ -229,7 +246,6 @@ main {
                 font-family: Roboto-Regular, sans-serif;
                 color: $lightGray;
                 padding-top: 7px;
-                font-size: 14px;
                 letter-spacing: -0.02em;
                 text-transform: capitalize;
               }
@@ -249,4 +265,4 @@ footer {
   padding: 24px 0 24px 0;
 }
 
-@import "adaptive/index";
+@import "./adaptive/index";
